@@ -155,12 +155,13 @@ class SA:
 		aggregated_result = {}
 
 		if get_frost(key_type).verify_group_signature(aggregated_sign, hash, dkg_key["pubkey_data"]["pubkey_package"]):
-			aggregated_result["message_hash"] = hash
 			aggregated_result["result"] = "SUCCESSFUL"
+			aggregated_result["message_hash"] = hash
+			aggregated_result["signature"] = aggregated_sign
 			aggregated_result["request_id"] = request_id
 			aggregated_result["sa_data"] = sa_data
 			logging.info(f'Aggregated sign result: {aggregated_result["result"]}')
 		else:
-			aggregated_result["signature_data"] = list(signatures.values())
 			aggregated_result["result"] = "FAILED"
+			aggregated_result["signature_data"] = list(signatures.values())
 		return aggregated_result
