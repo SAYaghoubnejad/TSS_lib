@@ -11,8 +11,7 @@ dependencies = [
     "bitcoin-utils==0.6.8",
     "eth_abi==5.1.0",
     "web3==7.6.0",
-    # "frost_lib @ git+https://github.com/sadeghte/frost-lib.git@main"
-    "frost_lib @ file:///home/sadegh/Projects/zellular/frost-lib"
+    "frost_lib @ git+https://github.com/sadeghte/frost-lib.git@main"
 ]
 
 [build-system]
